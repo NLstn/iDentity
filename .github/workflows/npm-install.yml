@@ -1,0 +1,19 @@
+name: NPM Install
+
+on: push
+
+jobs:
+  npm-install:
+    name: NPM Install
+    runs-on: ubuntu-latest
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v2
+    
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+    
+    - name: Install
+      run: npm install
